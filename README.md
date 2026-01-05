@@ -1,405 +1,313 @@
 # PRACTICEJAVA-SQL-OOPS-SPRINGBOOT
 
-public class starPattern(){
-	public static void main(String args[]){
-		//int a = 5;
-		for( int i=1; i<=5; i++){
-			for(int j = 1; j<=i ; j++){
-				System.out.println("* ");
-			}
-			System.out.println();
+This repository contains **Core Java practice programs**, covering **loops, patterns, arrays, strings, OOP concepts**, and basic **logic-building questions**. It is useful for beginners and interview preparation.
 
-		}
-	}
-}
+---
 
+## 📌 Star Pattern Programs
+
+### 1️⃣ Right Angle Star Triangle
+
+```
 *
 **
 ***
 ****
 *****
+```
 
-int a = 5;
-for(int i = 1; i<= 5; i++){
-	for(int j = 1 ; j<= i; j++) {
-		System.out.println(j + " ");
-	}
-System.out.println();
+```java
+for(int i = 1; i <= 5; i++){
+    for(int j = 1; j <= i; j++){
+        System.out.print("* ");
+    }
+    System.out.println();
 }
+```
+
+---
+
+### 2️⃣ Number Triangle
+
+```
 1
 1 2
 1 2 3
 1 2 3 4
-1 2 3 4 5 
+1 2 3 4 5
+```
 
+```java
+for(int i = 1; i <= 5; i++){
+    for(int j = 1; j <= i; j++){
+        System.out.print(j + " ");
+    }
+    System.out.println();
+}
+```
 
-    *    
+---
+
+### 3️⃣ Pyramid Star Pattern
+
+```
+    *
    ***
   *****
  *******
-*********    
-int row =5;
-for(int i =1; i<=rows; i++){
-	//print spaces
-	for(int j=1; j<=rows; j++){
-		System.out.print(" "); // double space for alignment
-	}
-	//print stars
-	for(int k =1;k<=(2*i-1) ; k++){
-		System.out.println("* ");
-	}
-	System.out.println(); //next row
+*********
+```
+
+```java
+int rows = 5;
+for(int i = 1; i <= rows; i++){
+    for(int j = 1; j <= rows - i; j++){
+        System.out.print(" ");
+    }
+    for(int k = 1; k <= (2 * i - 1); k++){
+        System.out.print("*");
+    }
+    System.out.println();
 }
+```
 
+---
 
+### 4️⃣ Inverted Pyramid
 
+```
 *********
  *******
   *****
    ***
     *
-  int rows = 5;
-	for(int i = rows; i >= 1; i--){
-    // Print spaces
+```
+
+```java
+int rows = 5;
+for(int i = rows; i >= 1; i--){
     for(int j = 1; j <= rows - i; j++){
-        System.out.print("  "); // two spaces for alignment
+        System.out.print(" ");
     }
-    // Print stars
-    for(int k = 1; k <= (2*i - 1); k++){
-        System.out.print("* ");
+    for(int k = 1; k <= (2 * i - 1); k++){
+        System.out.print("*");
     }
-    System.out.println(); // move to next row
+    System.out.println();
 }
+```
 
-//outer loop --> i = rows to 1 (reverse)
-// spaces --> rows-i;
-// Stars --> (2* i -1)
-// System.out.println(--same line)
-//  System.out.println(same line)
+---
 
+## 🔢 Loop & Number Programs
 
+### ✔ Print Even Numbers (2–20)
 
-Right angle tringle 
-*
-**
-***
-****
-*****
-******
-
-for( i=1 ; i<= 5; i++){
-	for(j =1 ; j<=i ; j++){
-		System.out.println("* ");
-	}
-	System.out.println();
+```java
+for(int i = 2; i <= 20; i++){
+    if(i % 2 == 0)
+        System.out.println(i);
 }
+```
 
-1
-12
-123
-1234
-12345
+### ✔ Sum of First 5 Numbers
 
-for( i=1 ; i<= 5; i++){
-	for(j =1 ; j<=i ; j++){
-		System.out.println( j + " ");
-	}
-	System.out.println();
+```java
+int sum = 0;
+for(int i = 1; i <= 5; i++){
+    sum += i;
 }
+System.out.println("Sum = " + sum);
+```
 
-        * 
-      * * * 
-    * * * * * 
-  * * * * * * * 
-* * * * * * * * * 
+### ✔ Print "Java" 10 Times
 
-int rows = 5;
-for(int i= 1;i<=rows; i++){
- for ( int j = 1; j <= rows-i; j++){
- 	System.out.println( " ");
- }
- for( int k =1; k<= (2*i-1); k++)
-{
-	System.out.println("* ");
-
+```java
+for(int i = 1; i <= 10; i++){
+    System.out.println("Java");
 }
-System.out.println();
+```
 
+### ✔ Print Odd Numbers (1–15)
+
+```java
+for(int i = 1; i <= 15; i++){
+    if(i % 2 != 0)
+        System.out.println(i);
 }
-* * * * * * * * * 
-  * * * * * * * 
-    * * * * * 
-      * * * 
-        * 
-int rows = 5;
-for(int i= 1;i>=rows; i++){
- for ( int j = 1; j <= rows-i; j++){
- 	System.out.println( " ");
- }
- for( int k =1; k<= (2*i-1); k++)
-{
-	System.out.println("* ");
+```
 
+---
+
+## 🧮 Factorial Program
+
+```java
+int factorial = 1;
+for(int i = 1; i <= 5; i++){
+    factorial *= i;
 }
-System.out.println();
+System.out.println("Factorial = " + factorial);
+```
 
-}
+---
 
+## 🔁 Reverse a Number
 
-//print even no. from 2 to 20 using a loop 
-
-public class EvenNumbers {
-    public static void main(String[] args) {
-        for(int i = 2; i <= 20; i++) { // start from 2
-            if(i % 2 == 0) {
-                System.out.println(i); // print the current even number
-            }
-        }
-    }
-}
-
-
-//print sum of first 5 numbers 
-1 2 3 4 5 
-
-int sum =0;
-for(int i=1; i<=5; i++){
-	sum += i;
-}
-System.out.println("Sum =" + sum);
-
-//output =15 
-
-
-
-
-// print " Java " 10 times 
-for(int i = 1 ; i<= 10; i++){
-	System.out.println("Java");
-}
-
-//print odd number from 1 to 15 
-
-for(int i=1; i<=15;i++){
-	if(i%2 != 0){
-		System.out.println(i);
-	}
-}
-
-// factorial of 5 
-1 2 3 4 5 
-5*4*3*2*1= 
-5*4=20
-20*3= 60 
-60* 2 = 120 
-120*1 = 120 
-// so factorial is 120 
-
-int factorial = 1 ;
-for(int i=1 ; i<=5; i++){
-	factorial *= i;
-}
-System.out.println("Factorial =" + factorial );
-
-
-// output is 120 
-
-
-
-//Write a program to reverse a no.
-int num =123;
+```java
+int num = 123;
 int rev = 0;
 while(num != 0){
-	int digit = num % 10;
-	rev = rev*10+digit;
-	num /= 10;
+    int digit = num % 10;
+    rev = rev * 10 + digit;
+    num /= 10;
 }
-System.out.println("reverse no =" + rev);
+System.out.println("Reverse number = " + rev);
+```
 
+---
 
-// output = 321
+## 🔍 Prime Number Check
 
-
-
-//check prime no 
-
-int n = 17 ;
-
+```java
+int n = 17;
 boolean isPrime = true;
-for( int = 2 ; i<= n/2 ; i++){
-	if(n% 1 == 0){
-		isPrime = false;
-		break;
 
-	}
+for(int i = 2; i <= n / 2; i++){
+    if(n % i == 0){
+        isPrime = false;
+        break;
+    }
 }
+
 if(isPrime)
-	System.out.println(n + " is prime ");
-else 
-	System.out.println( n + " is not prime no ");
+    System.out.println(n + " is Prime");
+else
+    System.out.println(n + " is Not Prime");
+```
 
+---
 
+## 📦 Arrays
 
+### ✔ Print Array Elements
 
-
-
-
-
-
-
-
-//arrays and strings
-
-
-//Print all elements of array 
-int[] arr = {2,4,6,8,10};
-for(int i=0; i<arr.length; i++){
-	System.out.println(arr[i]);
+```java
+int[] arr = {2, 4, 6, 8, 10};
+for(int i = 0; i < arr.length; i++){
+    System.out.println(arr[i]);
 }
+```
 
+### ✔ Sum of Array Elements
 
-
-
-
-
-
-//Sum of array elements 
-int sum =0;
-for(int i=0; i<arr.length; i++){
-		sum += arr[i];
+```java
+int sum = 0;
+for(int i = 0; i < arr.length; i++){
+    sum += arr[i];
 }
-System.out.println("Sum" + sum);
-//sum = 30
+System.out.println("Sum = " + sum);
+```
 
+### ✔ Largest Number in Array
 
-
-
-
-
-//Reverse a string 
-String str="hello" ;  // reverse this =olleh
-String rev="";
-for(int i=str.length()-1; i>=0; i--){
-	rev += str.charAt(i);
-
-}
-System.out.println("Reversed =" +rev);
-
-
-
-
-
-// check palindrome String (reads same forward and backward)
-String str="level";
-String rev="";
-
-for(int i=str.length()-1; i>=0; i--){
-	rev += str.charAt(i);
-}
-//check palindrome 
-if(str.equals(rev)){
-	System.out.println(str + "is palindrome ");
-
-} else {
-	System.out.println(str + "is not palindrome ");
-}
-.// madam is palindrome 
-
-
-
-
-
-
-
-//Create an array {1, 3, 5, 7, 9} → print even numbers only
-
-int[] arr  = {1, 3, 5, 7, 9};
-for(int i =0 ; i<arr.length; i++){
-	if(arr[i] % 2 == 0){
-		System.out.println("even no. " arr[i]);
-	}else{
-		System.out.println("No even no. array ");
-	}
-}
-
-
-
-
-
-
-//String "Java" → print each character on a new line
-
-
-// I use the charAt() method to access each character
- // of a string using a loop.
-String str ="Java";
-for(int i=0; i<str.length();i++){
-	System.out.println(str.charAt(i));
-}
-J
-a
-v
-a
-
-
-
-PRACTICE 3 OOPS+CORE JAVA LOGIC QUESTION+SQL +SPRINGBOOT -REST APIS 
-
-
-
-OOPs+Logic 
-
-Concept : Encapsulation 
-Encapsulation means wrapping data and methods together and hiding data using private access.
-
-class Student{
-
-	//encapuslate this date as using private access modifier 
-
-	private int id;
-	private String name;
-	
-//getter and setter 
-	public void setId(int id){
-		this.id=id;
-	}
-	public int getId(){
-		return id;
-	}
-	public void setName(String name){
-		this.name=name;
-
-	}
-	public String getName(){
-		return name;
-	}
-	public class Test{
-		public static void main(String[] args){
-			//object 
-			Student s = new Student();
-			s.setId(1);
-			s.setName("Geetanjali");
-
-			System.out.println(s.getId);
-			System.out.println(s.getName);
-
-		}
-	}
-}
-
-
-Java core logic 
-
-// find the largest number in array 
-
-int[] arr = {10,45,2,89,30};
+```java
+int[] arr = {10, 45, 2, 89, 30};
 int max = arr[0];
 
-for(int i =1; i<arr.length; i++){
-	if(arr[i]>max){
-		max = arr[i];
-	}
+for(int i = 1; i < arr.length; i++){
+    if(arr[i] > max)
+        max = arr[i];
 }
-System.out.println("Largest" +max);
+System.out.println("Largest = " + max);
+```
 
+---
 
+## 🔤 Strings
+
+### ✔ Reverse a String
+
+```java
+String str = "hello";
+String rev = "";
+
+for(int i = str.length() - 1; i >= 0; i--){
+    rev += str.charAt(i);
+}
+System.out.println("Reversed = " + rev);
+```
+
+### ✔ Palindrome String Check
+
+```java
+String str = "level";
+String rev = "";
+
+for(int i = str.length() - 1; i >= 0; i--){
+    rev += str.charAt(i);
+}
+
+if(str.equals(rev))
+    System.out.println("Palindrome");
+else
+    System.out.println("Not Palindrome");
+```
+
+### ✔ Print Each Character of String
+
+```java
+String str = "Java";
+for(int i = 0; i < str.length(); i++){
+    System.out.println(str.charAt(i));
+}
+```
+
+---
+
+## 🧠 OOPS Concept – Encapsulation
+
+```java
+class Student{
+    private int id;
+    private String name;
+
+    public void setId(int id){
+        this.id = id;
+    }
+    public int getId(){
+        return id;
+    }
+    public void setName(String name){
+        this.name = name;
+    }
+    public String getName(){
+        return name;
+    }
+}
+```
+
+```java
+public class Test{
+    public static void main(String[] args){
+        Student s = new Student();
+        s.setId(1);
+        s.setName("Geetanjali");
+
+        System.out.println(s.getId());
+        System.out.println(s.getName());
+    }
+}
+```
+
+---
+
+## 🚀 Tech Stack
+
+* Core Java
+* OOP Concepts
+* Logic Building
+* SQL (Upcoming)
+* Spring Boot REST APIs (Upcoming)
+
+---
+
+✨ *This repository is for daily practice and interview preparation.*
