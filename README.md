@@ -308,6 +308,237 @@ public class Test{
 * SQL (Upcoming)
 * Spring Boot REST APIs (Upcoming)
 
+
+# PRACTICE 3 – OOPS + Core Java + SQL + Spring Boot REST APIs
+
+This repository contains **basic interview-oriented practice** for:
+
+* OOPS (Encapsulation)
+* Core Java logic questions
+* SQL queries
+* Spring Boot REST APIs
+
+---
+
+## 🔹 OOPS + Logic
+
+### Concept: Encapsulation
+
+Encapsulation means **wrapping data (variables) and methods together** and **hiding data** using the `private` access modifier.
+
+### Example: `Student` Class
+
+```java
+class Student {
+
+    // encapsulated data using private access modifier
+    private int id;
+    private String name;
+
+    // getters and setters
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+}
+
+class Test {
+    public static void main(String[] args) {
+        // object creation
+        Student s = new Student();
+        s.setId(1);
+        s.setName("Geetanjali");
+
+        System.out.println(s.getId());
+        System.out.println(s.getName());
+    }
+}
+```
+
+---
+
+## 🔹 Core Java Logic
+
+### Find the Largest Number in an Array
+
+```java
+int[] arr = {10, 45, 2, 89, 30};
+int max = arr[0];
+
+for (int i = 1; i < arr.length; i++) {
+    if (arr[i] > max) {
+        max = arr[i];
+    }
+}
+
+System.out.println("Largest number: " + max);
+```
+
+---
+
+## 🔹 SQL Practice
+
+### 1. Create Table
+
+```sql
+CREATE TABLE employee (
+    id INT PRIMARY KEY,
+    name VARCHAR(50),
+    salary INT,
+    department VARCHAR(30)
+);
+```
+
+### 2. Insert Data
+
+```sql
+INSERT INTO employee VALUES (1, 'John', 40000, 'IT');
+INSERT INTO employee VALUES (2, 'Aman', 30000, 'HR');
+```
+
+### 3. Important Interview Queries
+
+```sql
+SELECT * FROM employee;
+
+SELECT name, salary FROM employee;
+
+SELECT * FROM employee WHERE salary > 35000;
+
+SELECT * FROM employee ORDER BY salary DESC;
+```
+
+### Difference Between `WHERE` and `HAVING`
+
+* **WHERE**: Filters rows **before** `GROUP BY`
+* **HAVING**: Filters records **after** `GROUP BY`
+
+---
+
+## 🔹 Spring Boot – REST APIs
+
+### 1. Simple REST Controller
+
+```java
+@RestController
+@RequestMapping("/api")
+public class TestController {
+
+    @GetMapping("/hello")
+    public String hello() {
+        return "Hello from Spring Boot";
+    }
+}
+```
+
+---
+
+### 2. REST API for Student
+
+```java
+@RestController
+@RequestMapping("/student")
+public class StudentController {
+
+    @GetMapping("/{name}")
+    public String getStudent(@PathVariable String name) {
+        return "Student name is " + name;
+    }
+}
+```
+
+### Sample URL
+
+```
+http://localhost:8080/student/John
+```
+
+---
+
+## 🔹 Mini Practice
+
+### Java: `Employee` Class (Encapsulation)
+
+```java
+class Employee {
+    private int id;
+    private String employeeName;
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setEmployeeName(String employeeName) {
+        this.employeeName = employeeName;
+    }
+
+    public String getEmployeeName() {
+        return employeeName;
+    }
+}
+
+class EmployeeTest {
+    public static void main(String[] args) {
+        Employee emp = new Employee();
+        emp.setId(1);
+        emp.setEmployeeName("Riya");
+
+        System.out.println(emp.getId());
+        System.out.println(emp.getEmployeeName());
+    }
+}
+```
+
+**Output:**
+
+```
+1
+Riya
+```
+
+---
+
+### SQL: Get Highest Salary
+
+```sql
+SELECT MAX(salary) FROM employee;
+```
+
+---
+
+### Spring Boot: `/api/welcome` GET API
+
+```java
+@RestController
+@RequestMapping("/api")
+public class WelcomeController {
+
+    @GetMapping("/welcome")
+    public String welcome() {
+        return "Hello from Spring Boot";
+    }
+}
+```
+
+---
+
+
+
 ---
 
 ✨ *This repository is for daily practice and interview preparation.*
