@@ -700,17 +700,115 @@ GET http://localhost:8888/employees/1
 
 * Fetches employee data using ID
 * Uses Spring Data JPA `findById()` method
+**📘 Practice 5 – DSA | Java Core | SQL | Spring Boot**
 
----
+This practice covers DSA problems, Java Core concepts, SQL queries, and Spring Boot REST APIs, with both brute force and optimized approaches wherever applicable.
 
-## ✨ Tech Stack
+```🔹 1. Two Sum Problem
+✅ Brute Force Approach — O(n²)
+int n = nums.length;
 
-* Java (Core + OOP)
-* SQL
-* Spring Boot
-* Spring Data JPA
-* REST APIs
+for (int i = 0; i < n; i++) {
+    for (int j = i + 1; j < n; j++) {
+        if (nums[i] + nums[j] == target) {
+            System.out.println(i + ", " + j);
+        }
+    }
+}
 
----
+```
+## Explanation:
+
+## Uses nested loops to check all possible pairs.##
+
+** Simple but inefficient for large inputs due to O(n²) time complexity. **
+
+```🚀 Optimized Approach (HashMap) — O(n)
+Map<Integer, Integer> map = new HashMap<>();
+
+for (int i = 0; i < nums.length; i++) {
+    int complement = target - nums[i];
+
+    if (map.containsKey(complement)) {
+        return new int[]{ map.get(complement), i };
+    }
+    map.put(nums[i], i);
+}
+return new int[]{};
+
+```
+##Explanation:##
+
+##Uses a HashMap to store previously visited numbers.
+
+##Reduces time complexity to O(n).
+
+##Space complexity: O(n).
+
+##🔹 2. Contains Duplicate##
+##🚀 Optimized Approach (HashSet) — O(n)
+```Set<Integer> set = new HashSet<>();
+
+for (int num : nums) {
+    if (!set.add(num)) {
+        return true;
+    }
+}
+return false;
+
+```
+**Explanation:**
+
+##HashSet does not allow duplicates.
+
+##If insertion fails, a duplicate exists.
+
+##Efficient and clean solution.
+```
+🔹 3. Java Core – Count Words in a String
+String str = "Java is a powerful Language";
+String[] words = str.split(" ");
+
+System.out.println("Word count: " + words.length);
+
+```
+## Explanation:
+
+## Splits the string using space delimiter.
+
+## Counts total words using array length.
+```
+🔹 4. SQL – Delete Employee with Minimum Salary
+DELETE FROM employee
+WHERE salary = (SELECT MIN(salary) FROM employee);
+
+```
+## Explanation:
+
+## Uses a subquery to find the minimum salary.
+
+## Deletes all employees having that minimum salary.
+
+### 🔹 5. Spring Boot – Get Employee by ID
+```@GetMapping("/{id}")
+public ResponseEntity<Employee> getById(@PathVariable int id) {
+    return repo.findById(id)
+            .map(ResponseEntity::ok)
+            .orElse(ResponseEntity.notFound().build());
+}
+```
+
+## Explanation:
+
+## Uses ResponseEntity to handle HTTP status codes.
+
+## Returns:
+````
+200 OK if employee is found
+
+404 NOT FOUND if employee does not exist
+````
+
+## Clean and REST-compliant API design.
 
 📌 *This repository reflects my continuous learning and hands-on practice toward becoming a strong Java Backend Developer.* 💪
