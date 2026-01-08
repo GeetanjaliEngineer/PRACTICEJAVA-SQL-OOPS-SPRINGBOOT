@@ -811,4 +811,222 @@ public ResponseEntity<Employee> getById(@PathVariable int id) {
 
 ## Clean and REST-compliant API design.
 
+
+
+## Practice 6
+
+
+## Reverse Array
+Array ke elements ko ulta karna. 
+```
+Brute force Approach 
+int[] arr={1,2,3,4};
+int j=0;
+
+for(int i=arr.length-1; i >= 0; i--){
+	rev[j] = arr[i];
+	j++;
+}
+```
+Time complexity - O(n)
+I create a new aray and store elemets in reverse order .
+
+
+## Optimized Approach 
+Same array main swap karte hai 
+```
+int[] arr = {1,2,3,4}
+int start=0;
+int end = arr.length-1;
+
+while(start<end){
+	int temp = arr[start];
+	arr[start] = arr[end];
+	arr[end]= temp;
+
+	start++;
+	end--;
+}
+```
+i use two pointer and swap elements from both ends to reverse the array in-place .
+
+
+-------------------------------------------------------
+
+
+
+### String vs StringBuilder
+```
+String s = "Java";
+s=s+"Dev"; //creates new object 
+
+StringBuilder sb = new StringBuilder("Java");
+sb.append("DEV");
+```
+
+
+String	    -StringBuilder
+Immutable   -	Mutable
+Slow	    -   Fast
+Thread-safe -	Not thread-safe
+
+String is immutable while StringBuilder is mutable and faster.
+
+
+-------------------------------------------------------
+
+### SQL
+
+## What is JOIN?
+
+Join ka use 2 tables ke data combine karne ke liye hota hai.charAt
+
+Example:
+
+employee table has id ,name,dept_id
+
+department table has id and deparment
+```
+SELECT e.name, d.deparment
+From employee e
+Inner JOIN department d
+ON e.dept_id = d.id;
+```
+INNER join returns only matching records from both sides.
+
+-------------------------------------------------------------
+
+
+## What is ORM?
+Object Relational Mapping 
+ 
+Java Objects ko database tables se map karta hai 
+SQL manually likhne ki zarurat kam ho jati hai 
+- Orm helps map java objects to database tables and reduces boilerplate sql Code.
+```
+
+public class Employee{
+	@Id
+	Private int id;
+	private String name;
+}
+```
+Employee--table 
+id,name-- columns
+
+
+---------------------------------------
+## Hibernate 
+- Hiberate is an ORM Framework.
+JPA is a specification
+Hibernate= JPA implementation
+
+HIberante implements JPA and handles database operations automatically.
+
+
+------------------------------------------------
+
+## What is REST?
+Rest= Representational State Transfer
+
+1.GET-fetch data
+2.POST-Save data
+3.PUT-Update
+4.DELETE- Remove
+```
+public List<Employee> getAll(){
+	return repo.findAll();
+}
+
+```
+
+---------------------------------------------
+
+### Palindrome 
+
+reads same forward and backward
+
+## Two Pointer Approch 
+
+Start pointer left and right 
+Compare Character 
+```
+String str="level";
+int start=0;
+int end=str.length()-1;
+boolean isPalindrome=true;
+
+while(start < end){
+	if(str.charAt(start)!- str.charAt(end)){
+		isPalindrome=false;
+		break;
+	}
+	start++;
+	end--;
+
+	if(isPalindrome){
+		return "Palindrome";
+	}else{
+		return "Not a palindrome";
+	}
+}
+```
+tc-O(n)
+
+i use two pointer from both ends and compare characters without extra space 
+
+-----------------------------------------------------
+1. What is immutable?
+String is immutable, so its value cannot be changed once created.charAt
+
+
+
+------------------------------------------------------------------------------
+
+### COLLECTION FRAMEWORK 
+
+-- java collection framework=
+To Store objects and manipulate with ready made structure
+
+for instance :
+ArrayList, Hashset, Hashmap
+
+## ArrayList 
+```
+ArrayList<String> list = new ArrayList<>();
+list.add("Java");
+list.add("Spring");
+list.add("SQL");
+System.out.println(list);
+```
+output will be [Java, Spring, sql]
+
+--------------------------------------------------------
+
+### sql 
+Left join and Inner join 
+## 1. Inner join 
+-- only Matching data using
+```
+select e.name,d.deparment
+fromemployee e 
+Inner join deparment d ON e.dept_id=d.id;
+```
+## 2. Left Join 
+```
+select e.name, d.deparment
+from employees e
+left join deparment deparment
+on e.dept_id=d.id;
+```
+
+-------------------------------------------------------
+
+
+
+
+
+
+
+
 📌 *This repository reflects my continuous learning and hands-on practice toward becoming a strong Java Backend Developer.* 💪
